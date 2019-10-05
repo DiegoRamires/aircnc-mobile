@@ -3,6 +3,7 @@ import {
   View,
   AsyncStorage,
   KeyboardAvoidingView,
+  Platform,
   Text,
   TextInput,
   Image,
@@ -40,7 +41,7 @@ export default function Login({ navigation }) {
   }
 
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
       <Image source={logo} />
 
       <View style={styles.form}>
